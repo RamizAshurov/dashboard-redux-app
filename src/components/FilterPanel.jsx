@@ -4,12 +4,11 @@ import { Stack } from 'UI/Stack';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectFilters } from 'store/filters/filters-selectors';
-import { removeFilter, clearFilters } from 'store/filters/filters-actions';
+import { removeFilter, clearFilters, selectFiltres } from 'features/filters/filtersSlice';
 
 const FilterPanel = () => {
   const dispatch = useDispatch()
-  const currentFilters = useSelector(selectFilters)
+  const currentFilters = useSelector(selectFiltres)
 
   if (currentFilters.length === 0) 
     return null
